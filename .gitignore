@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# API Key 只放这里或 GitHub Secrets，绝不进版本库
+.env
+
+# state/ 与 archive/ 故意不忽略：
+# GitHub Actions 的容器是临时的，去重状态必须靠仓库持久化才能跨天生效

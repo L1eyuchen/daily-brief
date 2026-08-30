@@ -1,0 +1,164 @@
+# 筛选规则
+# 设计原则：blacklist 只拦明确不要的；triggers 做的是"打标"不是"过滤"——
+# 命中任一触发器即进简报，一条都没命中才丢弃。宁可多进一条，不可漏一条。
+
+# ---- 硬黑名单：命中即丢弃。保持克制，误伤代价高于漏筛代价 ----
+blacklist:
+  - mobile
+  - ios
+  - android
+  - app store
+  - google play
+  - gacha
+  - 手游
+  - 抽卡
+  - 内购
+  - 小程序
+
+# ---- 八条触发器：一条资讯值不值得进简报，看它是否触发任一条 ----
+triggers:
+  - id: new_release
+    name: 新游定档 / 发售
+    why: 玩家马上会搜"XX 手柄能用吗""键位怎么设"，手柄类目 ROI 最高的长尾内容
+    keywords:
+      - release date
+      - launches
+      - launches on
+      - available now
+      - out now
+      - coming to
+      - early access
+      - 定档
+      - 发售
+      - 上线
+      - 跳票
+      - 延期
+
+  - id: hardware
+    name: 平台硬件变动
+    why: 主机涨价、新主机、固件更新，直接影响兼容性与购买决策
+    keywords:
+      - hardware
+      - firmware
+      - system update
+      - system software
+      - price increase
+      - price hike
+      - backward compatib
+      - new model
+      - 涨价
+      - 固件
+      - 系统更新
+      - 兼容
+      - 新机型
+
+  - id: competitor
+    name: 竞品新品 / 降价
+    why: 竞品对位表是复用次数最高的一张表
+    keywords:
+      - 8bitdo
+      - flydigi
+      - beitong
+      - gamesir
+      - controller
+      - gamepad
+      - peripheral
+      - 八位堂
+      - 飞智
+      - 北通
+      - 墨将
+      - 盖世小鸡
+      - 手柄
+      - 外设
+
+  - id: tech_route
+    name: 技术路线变化
+    why: TMR / 霍尔 / 星闪 / 回报率标准一变，参数话术要跟着改
+    keywords:
+      - hall effect
+      - polling rate
+      - latency
+      - nearlink
+      - haptic
+      - adaptive trigger
+      - stick drift
+      - 霍尔
+      - 星闪
+      - 回报率
+      - 延迟
+      - 摇杆漂移
+      - 扳机
+
+  - id: community
+    name: 社区高赞吐槽
+    why: 高赞抱怨就是真实痛点，本身就是选题
+    keywords:
+      - players complain
+      - backlash
+      - criticized
+      - patch notes
+      - hotfix
+      - 玩家吐槽
+      - 争议
+      - 差评
+      - 补丁说明
+
+  - id: esports
+    name: 赛事与选手
+    why: 格斗与 FPS 赛事节点，是背书的借势窗口
+    keywords:
+      - tournament
+      - championship
+      - evo
+      - esports
+      - qualifier
+      - 赛事
+      - 总决赛
+      - 冠军
+
+  - id: supply_chain
+    name: 供应链与政策
+    why: 影响定价与备货，这类属于"要转给内部"的信息
+    keywords:
+      - tariff
+      - memory shortage
+      - dram
+      - chip shortage
+      - supply chain
+      - 关税
+      - 内存涨价
+      - 芯片
+      - 缺货
+      - 供应链
+
+  - id: trending
+    name: 现象级可蹭热点
+    why: 泛流量机会
+    keywords:
+      - gta 6
+      - gta6
+      - grand theft auto
+      - black myth
+      - trending
+      - viral
+      - record-breaking
+      - 黑神话
+      - 现象级
+      - 破纪录
+
+# ---- 手柄轨道线索：命中则改投 controller 轨道（攒池，不每日推）----
+controller_hints:
+  - controller support
+  - gamepad support
+  - controller
+  - gamepad
+  - keybind
+  - button mapping
+  - 手柄
+  - 适配
+  - 键位
+
+# ---- 投递策略 ----
+delivery:
+  game_max_items: 8              # 每日简报条数上限，防刷屏
+  controller_min_items: 3        # 手柄情报攒满几条才发；没料就空着

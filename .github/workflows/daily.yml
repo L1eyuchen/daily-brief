@@ -1,0 +1,51 @@
+name: 每日资讯简报
+
+on:
+  schedule:
+    # UTC 00:30 = 北京时间 08:30
+    # GitHub Actions 的 cron 只认 UTC，且官方不保证准点，高峰期可能延迟 5-30 分钟
+    - cron: "30 0 * * *"
+  workflow_dispatch: # 保留手动触发，方便随时验证
+
+concurrency:
+  group: daily-brief
+  cancel-in-progress: false
+
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write # 需要把去重状态提交回仓库
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: 安装依赖
+        run: pip install -q -r requirements.txt
+
+      - name: 生成并推送简报
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+        run: python main.py
+
+      # Actions 的容器是临时的，去重状态必须提交回仓库才能跨天生效。
+      # 先 pull 再提交，顺序反过来在并发时容易冲突。
+      - name: 回提交状态与归档
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin "${GITHUB_REF_NAME}" || true
+          git add state archive
+          if git diff --staged --quiet; then
+            echo "状态无变化，跳过提交"
+          else
+            git commit -m "chore: 更新简报状态 $(date -u +%Y-%m-%dT%H:%M)Z"
+            git push || echo "推送失败，下次运行会重试"
+          fi

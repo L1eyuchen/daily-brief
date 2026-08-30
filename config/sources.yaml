@@ -1,0 +1,160 @@
+# 资讯源清单
+# track: game = 命中即推（每日） / controller = 进待发池，攒满再发
+# tier: 1 = 主力，2 = 补充。tier 仅用于简报内的排序，不影响筛选
+# 源地址于 2026-08-30 逐个实测；失效源请置 enabled: false 而非删除，保留记录
+
+sources:
+  # ---- 第一梯队：覆盖主机 + PC + 中文 + 产业数据 ----
+  - id: gematsu
+    name: Gematsu
+    url: "https://www.gematsu.com/feed"
+    track: game
+    tier: 1
+    lang: en
+    enabled: true
+    note: 日厂与主机向，首发预告、实机、发售日，更新极密
+
+  - id: vgc
+    name: VGC
+    url: "https://www.videogameschronicle.com/feed/"
+    track: game
+    tier: 1
+    lang: en
+    enabled: true
+    note: 欧美主机新闻与产业，硬件政策最快
+
+  - id: gcores
+    name: 机核 GCORES
+    url: "https://www.gcores.com/rss"
+    track: game
+    tier: 1
+    lang: zh
+    enabled: true
+    note: 中文深度、展会现场、产业观察
+
+  - id: gamesindustry
+    name: GamesIndustry.biz
+    url: "https://www.gamesindustry.biz/feed"
+    track: game
+    tier: 1
+    lang: en
+    enabled: true
+    note: 产业数据与商业动态。注意 /feed/rss 与 /rss 均已 404，只能用 /feed
+
+  # ---- 第二梯队：按需要覆盖 ----
+  - id: pcgamer
+    name: PC Gamer
+    url: "https://www.pcgamer.com/rss/"
+    track: game
+    tier: 2
+    lang: en
+    enabled: true
+    note: PC 硬件与优化，与适配类内容最对口
+
+  - id: rps
+    name: Rock Paper Shotgun
+    url: "https://www.rockpapershotgun.com/feed"
+    track: game
+    tier: 2
+    lang: en
+    enabled: true
+
+  - id: eurogamer
+    name: Eurogamer
+    url: "https://www.eurogamer.net/feed"
+    track: game
+    tier: 2
+    lang: en
+    enabled: true
+
+  - id: nintendolife
+    name: Nintendo Life
+    url: "https://www.nintendolife.com/feeds/latest"
+    track: game
+    tier: 2
+    lang: en
+    enabled: true
+    note: Switch 与 Switch 2 生态，兼容性消息
+
+  - id: psblog
+    name: PlayStation Blog
+    url: "https://blog.playstation.com/feed/"
+    track: game
+    tier: 2
+    lang: en
+    enabled: true
+    note: PS 官方第一手，配件与系统更新
+
+  - id: xboxera
+    name: XboxEra
+    url: "https://xboxera.com/feed/"
+    track: game
+    tier: 2
+    lang: en
+    enabled: true
+
+  - id: steamnews
+    name: Steam 官方博客
+    url: "https://store.steampowered.com/feeds/news/"
+    track: game
+    tier: 2
+    lang: en
+    enabled: true
+    note: 平台政策与控制器支持变动
+
+  - id: chuapp
+    name: 触乐
+    url: "https://www.chuapp.com/feed"
+    track: game
+    tier: 2
+    lang: zh
+    enabled: true
+
+  - id: nintendoeverything
+    name: Nintendo Everything
+    url: "https://nintendoeverything.com/feed/"
+    track: game
+    tier: 2
+    lang: en
+    enabled: true
+
+  # ---- 已失效 / 被拦截：保留记录，默认关闭 ----
+  # Cloudflare 拦脚本与云端 IP，实测 403。阅读器（有 UA 与 IP 信誉）可能可用，但
+  # GitHub Actions 的 IP 信誉更差，故默认关闭。不值得为它引入 RSSHub 这一额外依赖点。
+  - id: purexbox
+    name: Pure Xbox
+    url: "https://purexbox.com/feed"
+    track: game
+    tier: 2
+    lang: en
+    enabled: false
+    note: 实测 403
+
+  - id: xboxwire
+    name: Xbox Wire
+    url: "https://news.xbox.com/en-us/feed/"
+    track: game
+    tier: 2
+    lang: en
+    enabled: false
+    note: 实测 403
+
+  - id: pcgamesn
+    name: PCGamesN
+    url: "https://www.pcgamesn.com/feed"
+    track: game
+    tier: 2
+    lang: en
+    enabled: false
+    note: 实测 403
+
+# 抓取行为
+fetch:
+  timeout_seconds: 25       # Steam 官方博客实测 15 秒会超时
+  max_workers: 8
+  window_hours: 24        # 只保留最近 24 小时发布的条目
+  user_agent: "Mozilla/5.0 (compatible; GameSirBrief/1.0; +https://github.com/)"
+
+# 源健康检查：连续失败多少次后自动降级并告警
+health:
+  fail_threshold: 3
