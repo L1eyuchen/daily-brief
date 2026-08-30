@@ -15,6 +15,117 @@ blacklist:
   - 内购
   - 小程序
 
+# ---- 关注名单：不看通用关键词，直接点名值得盯的 IP 与厂商 ----
+# 为什么需要它：触发器关键词覆盖不到具体 IP。"Elden Ring 玩家在折腾什么"
+# 既不叫定档也不叫发售，但对手柄品牌是真选题——通用规则会漏，名单能兜住它。
+# 维护原则：只放中文社区真有认知度的名字，宁缺毋滥；每季度随项目重点复核一次。
+watchlist:
+  # 赛车与格斗：手柄的强场景，优先级最高
+  - forza
+  - 极限竞速
+  - gran turismo
+  - iracing
+  - the crew
+  - need for speed
+  - 极品飞车
+  - dirt rally
+  - wrc
+  - street fighter
+  - 街霸
+  - tekken
+  - 铁拳
+  - mortal kombat
+  - 真人快打
+  - guilty gear
+  - 罪恶装备
+  # 头部大作
+  - gta
+  - grand theft auto
+  - red dead
+  - elder scrolls
+  - 上古卷轴
+  - elden ring
+  - 艾尔登法环
+  - black myth
+  - 黑神话
+  - witcher
+  - 巫师
+  - cyberpunk
+  - 赛博朋克
+  - persona
+  - 女神异闻录
+  - monster hunter
+  - 怪物猎人
+  - zelda
+  - 塞尔达
+  - mario
+  - 马力欧
+  - pokemon
+  - 宝可梦
+  - mega man
+  - 洛克人
+  - castlevania
+  - 恶魔城
+  - resident evil
+  - 生化危机
+  - final fantasy
+  - 最终幻想
+  - devil may cry
+  - 鬼泣
+  - silent hill
+  - 寂静岭
+  - metal gear
+  - 合金装备
+  - halo
+  - 光环
+  - god of war
+  - 战神
+  - spider-man
+  - 蜘蛛侠
+  # 国内高关注
+  - 原神
+  - genshin
+  - 鸣潮
+  - wuthering waves
+  - 明日方舟
+  - 永劫无间
+  - naraka
+  - 三角洲行动
+  - delta force
+  - 漫威争锋
+  - marvel rivals
+  - 无限大
+  # 竞技与射击
+  - call of duty
+  - 使命召唤
+  - battlefield
+  - 战地
+  - valorant
+  - 无畏契约
+  - overwatch
+  - 守望先锋
+  - deadlock
+  # 第三方大厂动态。平台方（任天堂 / 索尼 / 微软）太宽，放进来等于不过滤
+  - rockstar
+  - capcom
+  - 卡普空
+  - square enix
+  - 史克威尔
+  - bandai namco
+  - 万代南梦宫
+  - fromsoftware
+  - cd projekt
+  - ubisoft
+  - 育碧
+  - mihoyo
+  - 米哈游
+  - hoyoverse
+  - 网易
+  - netease
+  - 库洛
+  - kuro games
+  - 游戏科学
+
 # ---- 八条触发器：一条资讯值不值得进简报，看它是否触发任一条 ----
 triggers:
   - id: new_release
@@ -104,17 +215,34 @@ triggers:
       - 补丁说明
 
   - id: esports
-    name: 赛事与选手
-    why: 格斗与 FPS 赛事节点，是背书的借势窗口
+    name: 赛事与电竞生态
+    why: 格斗与 FPS 赛事节点是背书借势窗口；选手与战队动态是社区话题入口
     keywords:
       - tournament
       - championship
       - evo
       - esports
       - qualifier
+      - playoffs
+      - grand final
+      - invitational
+      - prize pool
+      - roster
       - 赛事
       - 总决赛
-      - 冠军
+      - 季后赛
+      - 联赛
+      - 邀请赛
+      - 战队
+      - 转会
+      - 夺冠
+      - 选手
+      - cs2
+      - counter-strike
+      - street fighter
+      - tekken
+      - 街霸
+      - 铁拳
 
   - id: supply_chain
     name: 供应链与政策
@@ -161,4 +289,5 @@ controller_hints:
 # ---- 投递策略 ----
 delivery:
   game_max_items: 8              # 每日简报条数上限，防刷屏
+  game_min_items: 4              # 目标下限：严格标准不够数时，用宽松标准补齐到这个数
   controller_min_items: 3        # 手柄情报攒满几条才发；没料就空着

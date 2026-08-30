@@ -16,6 +16,7 @@ from pathlib import Path
 
 import yaml
 
+from brief import load_env
 from brief.dedupe import dedupe
 from brief.fetch import fetch_all
 from brief.push import payload_size_ok, push_feishu
@@ -32,19 +33,6 @@ logging.basicConfig(
     datefmt="%H:%M:%S",
 )
 log = logging.getLogger("brief")
-
-
-def load_env() -> None:
-    """极简 .env 加载，避免为一个文件引入 python-dotenv 依赖。"""
-    path = ROOT / ".env"
-    if not path.exists():
-        return
-    for line in path.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line or line.startswith("#") or "=" not in line:
-            continue
-        key, value = line.split("=", 1)
-        os.environ.setdefault(key.strip(), value.strip().strip("\"'"))
 
 
 def load_config(name: str) -> dict:
@@ -68,7 +56,7 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true", help="只跑流程不实际推送")
     args = parser.parse_args()
 
-    load_env()
+    load_env(ROOT)
     sources_cfg = load_config("sources.yaml")
     rules = load_config("rules.yaml")
     store = Store(ROOT)

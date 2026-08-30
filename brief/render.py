@@ -30,9 +30,11 @@ def render_feishu(day: str, items: list[dict], title: str) -> dict:
             {"tag": "text", "text": f"（{item['source_name']}）"},
         ])
         if item.get("verdict"):
+            # 宽松档标出来，让人一眼分清哪几条还需自己判断
+            tag = "（待判断）" if item.get("level") == "maybe" else ""
             rows.append(_line(f"   → 事实：{item['fact']}"))
             rows.append(_line(f"   → 判断：{item['verdict']}"))
-            rows.append(_line(f"   → 落点：{item['slot']}｜时效：{item['eta']}"))
+            rows.append(_line(f"   → 落点：{item['slot']}{tag}｜时效：{item['eta']}"))
         else:
             rows.append(_line(f"   → 命中：{'、'.join(item.get('hit_names', []))}"))
 
@@ -67,7 +69,7 @@ def render_markdown(day: str, items: list[dict], title: str) -> str:
             lines.append(f"- 关键事实：{item['fact']}")
             lines.append(f"- 判断：{item['verdict']}")
             lines.append(f"- 落点：{item['slot']}｜时效：{item['eta']}")
-            lines.append(f"- 判定方式：{item.get('judged_by', 'rule')}")
+            lines.append(f"- 分档：{item.get('level', '-')}｜判定方式：{item.get('judged_by', 'rule')}")
         if item.get("cover"):
             lines.append(f"- 封面：{item['cover']}")
         if item.get("summary"):

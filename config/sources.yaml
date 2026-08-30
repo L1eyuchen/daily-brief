@@ -148,6 +148,42 @@ sources:
     enabled: false
     note: 实测 403
 
+  # ---- 赛事与电竞：2026-08-30 实测新增 ----
+  - id: esportsinsider
+    name: Esports Insider
+    url: "https://esportsinsider.com/feed"
+    track: game
+    tier: 2
+    lang: en
+    enabled: true
+    note: 电竞产业与赛事商业动态，选手与战队消息
+
+  - id: hltv
+    name: HLTV
+    url: "https://www.hltv.org/rss/news"
+    track: game
+    tier: 2
+    lang: en
+    enabled: true
+    note: CS2 赛事第一手，更新频率高于综合电竞站
+
+  - id: gamespot
+    name: GameSpot
+    url: "https://www.gamespot.com/feeds/news/"
+    track: game
+    tier: 2
+    lang: en
+    enabled: true
+    note: 综合大站，用于补充条目基数，噪音中等
+
+# 实测可用但主动放弃的源（保留判断依据，避免以后重复试错）
+# Automaton https://automaton-media.com/feed/ ：60 条且更新到当天，但全日文。
+#   日文标题混进中文简报会拖慢扫读；日厂动向 VGC 与 Gematsu 已用英文覆盖。做日本市场时再启用。
+# GamesRadar https://www.gamesradar.com/rss/ ：50 条，但量大偏浅、攻略型居多，属噪音源。
+# VG247 https://www.vg247.com/feed ：HTTP 200 但最新内容停在 2026-06-02，是死源。
+# 中文站全灭（2026-08-30 实测）：游民星空、3DMGAME、A9VG、篝火营地、游戏时光、玩加电竞均 404。
+#   Dot Esports、Dexerto、Push Square、Siliconera、Time Extension、Nintendo Wire 均 403。
+
 # 抓取行为
 fetch:
   timeout_seconds: 25       # Steam 官方博客实测 15 秒会超时
