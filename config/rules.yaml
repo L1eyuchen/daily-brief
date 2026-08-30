@@ -38,6 +38,25 @@ watchlist:
   - 真人快打
   - guilty gear
   - 罪恶装备
+  - fatal fury
+  - 饿狼传说
+  - king of fighters
+  - 拳皇
+  - samurai shodown
+  - 侍魂
+  - snk
+  - capcom cup
+  - f1
+  - formula 1
+  - nascar
+  - porsche
+  - 保时捷
+  - le mans
+  - 勒芒
+  - assetto corsa
+  - 神力科莎
+  - apex legends
+  - apex英雄
   # 头部大作
   - gta
   - grand theft auto
@@ -105,6 +124,18 @@ watchlist:
   - overwatch
   - 守望先锋
   - deadlock
+  # 赛事主办方与赛事品牌。Liquipedia 的条目标是页面名（如 BLAST/Open/2026/Fall），
+  # 没有这些词模型认不出那是赛事，会一律打成低分
+  - blast
+  - pgl
+  - esl
+  - iem
+  - epl
+  - capcom pro tour
+  - evo
+  - algs
+  - esports world cup
+  - 电竞世界杯
   # 第三方大厂动态。平台方（任天堂 / 索尼 / 微软）太宽，放进来等于不过滤
   - rockstar
   - capcom
@@ -288,6 +319,7 @@ controller_hints:
 
 # ---- 投递策略 ----
 delivery:
-  game_max_items: 8              # 每日简报条数上限，防刷屏
-  game_min_items: 4              # 目标下限：严格标准不够数时，用宽松标准补齐到这个数
+  game_max_items: 8              # 游戏动态栏条数上限
+  game_min_items: 4              # 目标下限，低于它只在日志里提示，不强行凑数
+  esports_max_items: 3           # 赛事动态栏条数上限，独立成栏不与游戏动态抢位次
   controller_min_items: 3        # 手柄情报攒满几条才发；没料就空着

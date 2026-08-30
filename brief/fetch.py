@@ -94,6 +94,8 @@ def _normalize(entry: Any, source: dict) -> dict | None:
         "source": source["id"],
         "source_name": source["name"],
         "tier": source.get("tier", 2),
+        # 轨道先取源配置（game / esports / controller），筛选阶段可能再改判
+        "track": source.get("track", "game"),
     }
 
 

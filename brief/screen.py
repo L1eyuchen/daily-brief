@@ -190,10 +190,14 @@ def apply_rules(items: list[dict], rules: dict) -> list[dict]:
         if watched and "watchlist" not in hits:
             hits.append("watchlist")
 
-        is_controller = any(word in blob for word in controller_hints)
         item["hits"] = hits
         item["hit_names"] = names
-        item["track"] = "controller" if is_controller else "game"
+        # 手柄线索命中优先级最高；否则沿用源配置声明的轨道。
+        # 曾经在这里硬编码成 game，把 sources.yaml 里配的 esports 全覆盖了。
+        if any(word in blob for word in controller_hints):
+            item["track"] = "controller"
+        else:
+            item["track"] = item.get("track") or "game"
         kept.append(item)
 
     log.info("规则筛选：%d 条候选 -> %d 条命中（黑名单拦下 %d）", len(items), len(kept), blocked)
@@ -240,10 +244,9 @@ def enrich_with_ai(items: list[dict], rules: dict, max_items: int) -> list[dict]
         log.info("模型判定今日全部无落点，简报为空")
         return []
 
+    # 只排序不截取。截取必须留给调用方分轨之后做——
+    # 在这里按总分取前 N 条，会把高分轨道的名额占满，低分轨道（如赛事）一条都进不来
     scored.sort(key=lambda x: (-x["score"], -len(x["hits"]), x["tier"]))
-    selected = scored[:max_items]
-    high = sum(1 for x in selected if x["level"] == "high")
-    log.info("选定 %d 条：确定 %d 条，待判断 %d 条", len(selected), high, len(selected) - high)
-    if len(selected) < min_items:
-        log.warning("今日仅 %d 条，低于目标下限 %d——可考虑放宽 rules.yaml", len(selected), min_items)
-    return selected
+    high = sum(1 for x in scored if x["level"] == "high")
+    log.info("打分完成：%d 条有分（确定 %d 条，待判断 %d 条）", len(scored), high, len(scored) - high)
+    return scored

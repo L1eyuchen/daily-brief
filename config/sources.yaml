@@ -152,7 +152,7 @@ sources:
   - id: esportsinsider
     name: Esports Insider
     url: "https://esportsinsider.com/feed"
-    track: game
+    track: esports
     tier: 2
     lang: en
     enabled: true
@@ -161,11 +161,77 @@ sources:
   - id: hltv
     name: HLTV
     url: "https://www.hltv.org/rss/news"
-    track: game
+    track: esports
     tier: 2
     lang: en
     enabled: true
     note: CS2 赛事第一手，更新频率高于综合电竞站
+
+  # ---- 赛事赛程：Liquipedia 各 wiki（2026-08-30 实测）----
+  # Liquipedia 是 MediaWiki，可直接订阅任意 wiki 的页面变更。它比主办方官方源更全：
+  # BLAST、PGL、ESL 的赛程都在里面，而这些主办方官网都没 RSS。
+  # 代价是噪音偏高——页面微调也会进 feed，靠模型打分过滤。tier 3 即表示噪音偏高。
+  # ---- Liquipedia：全部关闭（2026-08-30 实测后放弃）----
+  # 技术上可用：MediaWiki 架构，feedrecentchanges 能订阅任意 wiki，200 且更新及时，
+  #   BLAST、PGL、Capcom Pro Tour 的赛程页面都在里面。
+  # 但内容上不可用：feed 每条只有页面名 + 一句 "Show changes"，没有任何实质信息。
+  #   模型给这些条目打 0 分是完全正确的——没有事实可提取，也推导不出落点。
+  # 真要用它的赛程数据，得走 Liquipedia API v3（api.liquipedia.net/api/v3/match）
+  #   拿结构化赛程，需要申请 API Key，是另一个量级的工程。
+  - id: lq_fighters
+    name: Liquipedia 格斗
+    url: "https://liquipedia.net/fighters/api.php?action=feedrecentchanges&feedformat=rss&namespace=0&limit=20"
+    track: esports
+    tier: 3
+    lang: en
+    enabled: false
+    note: feed 无实质内容，仅页面名与 Show changes
+
+  - id: lq_simracing
+    name: Liquipedia 模拟赛车
+    url: "https://liquipedia.net/simracing/api.php?action=feedrecentchanges&feedformat=rss&namespace=0&limit=20"
+    track: esports
+    tier: 3
+    lang: en
+    enabled: false
+    note: 同上，feed 无实质内容
+
+  - id: lq_apex
+    name: Liquipedia Apex
+    url: "https://liquipedia.net/apexlegends/api.php?action=feedrecentchanges&feedformat=rss&namespace=0&limit=20"
+    track: esports
+    tier: 3
+    lang: en
+    enabled: false
+    note: 同上，feed 无实质内容
+
+  - id: lq_cs2
+    name: Liquipedia CS2
+    url: "https://liquipedia.net/counterstrike/api.php?action=feedrecentchanges&feedformat=rss&namespace=0&limit=20"
+    track: game
+    tier: 3
+    lang: en
+    enabled: false
+    note: CS2 是键鼠项目，对手柄品牌无内容落点；且 HLTV 已覆盖赛果。实测跑了一轮，
+      16 条全部被模型判低分、一条没进简报，只是增加抓取量与噪音，故关闭
+
+  - id: iracing
+    name: iRacing 官方
+    url: "https://www.iracing.com/feed/"
+    track: game
+    tier: 2
+    lang: en
+    enabled: true
+    note: 官方赛季与赛事公告，eNASCAR 等
+
+  # ---- 实测可用但主动放弃 ----
+  # Liquipedia 的 dota2 / leagueoflegends / valorant / rocketleague 四个 wiki 同样可用
+  #   （实测 200，内容为 TI 2026、World Championship 等），但都是键鼠主导项目，
+  #   对手柄品牌几乎没有内容落点，只会增加噪音。做键鼠外设时再启用。
+  # pro.eslgaming.com/feed 实测返回 200，但内容是赌场广告与咖啡店文章，
+  #   域名已被 SEO 垃圾占领，绝对不能用——这是"必须实测再上线"的证据。
+  # 其他实测不可用：BLAST 官网 404、PGL 530、EVO 官网 404、EA 新闻 404、
+  #   GT Planet 403、Epic 商城 403、八位堂官网 404、Shoryuken SSL 错误、EventHubs 超时。
 
   - id: gamespot
     name: GameSpot

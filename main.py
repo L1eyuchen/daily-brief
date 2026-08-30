@@ -39,15 +39,15 @@ def load_config(name: str) -> dict:
     return yaml.safe_load((ROOT / "config" / name).read_text(encoding="utf-8"))
 
 
-def deliver(store, webhook, dry_run, day, track, items, title, archive_name) -> bool:
+def deliver(store, webhook, dry_run, day, track, groups, title, archive_name) -> bool:
     """渲染 → 自检体积 → 推送 → 归档。推送失败也照样归档，不留无痕的失败。"""
-    payload = render_feishu(day, items, title)
+    payload = render_feishu(day, groups, title)
     if not payload_size_ok(payload):
         log.error("[%s] 消息体超过飞书 20KB 限制，已跳过推送", track)
         return False
 
     ok = push_feishu(webhook, payload, dry_run=dry_run)
-    store.archive(day, archive_name, render_markdown(day, items, title))
+    store.archive(day, archive_name, render_markdown(day, groups, title))
     return ok
 
 
@@ -70,6 +70,7 @@ def main() -> int:
     day = utcnow().astimezone(CST).strftime("%Y-%m-%d")
     delivery_cfg = rules.get("delivery", {})
     max_items = delivery_cfg.get("game_max_items", 8)
+    esports_max = delivery_cfg.get("esports_max_items", 3)
     min_items = delivery_cfg.get("controller_min_items", 3)
 
     # 1–3 抓取、去重、规则筛选
@@ -84,19 +85,31 @@ def main() -> int:
     # 4 模型精筛（不可用时自动降级为纯规则）
     kept = enrich_with_ai(kept, rules, max_items)
 
-    # 5 双轨分流
+    # 5 三轨分流：游戏动态、赛事动态、手柄情报
+    # 赛事单独成栏，因为它的价值分天然低于大作动态，放一起抢位次永远排不上
     game_items = [x for x in kept if x["track"] == "game"][:max_items]
+    esports_items = [x for x in kept if x["track"] == "esports"][:esports_max]
     controller_items = [x for x in kept if x["track"] == "controller"]
 
     pushed = False
 
+    groups = []
     if game_items:
-        title = f"【{day} 主机/PC 游戏速览】共 {len(game_items)} 条"
-        pushed |= deliver(
-            store, webhook, dry_run, day, "game", game_items, title, f"{day}-game.md"
-        )
+        groups.append(("游戏动态", game_items))
+        if len(game_items) < delivery_cfg.get("game_min_items", 4):
+            log.warning(
+                "游戏动态仅 %d 条，低于目标下限 %d——可考虑放宽 rules.yaml",
+                len(game_items), delivery_cfg.get("game_min_items", 4),
+            )
+    if esports_items:
+        groups.append(("赛事动态", esports_items))
+
+    if groups:
+        total = len(game_items) + len(esports_items)
+        title = f"【{day} 主机/PC 游戏速览】共 {total} 条"
+        pushed |= deliver(store, webhook, dry_run, day, "game", groups, title, f"{day}-game.md")
     else:
-        log.info("游戏轨道今日无命中，跳过")
+        log.info("游戏与赛事轨道今日均无命中，跳过")
 
     if controller_items:
         store.add_pending("controller", controller_items)
@@ -105,7 +118,8 @@ def main() -> int:
         n = store.bump_counter("controller")
         title = f"【手柄情报 #{n:02d}】{day}"
         if deliver(
-            store, webhook, dry_run, day, "controller", pool, title, f"{day}-controller.md"
+            store, webhook, dry_run, day, "controller",
+            [("手柄情报", pool)], title, f"{day}-controller.md",
         ):
             store.clear_pending("controller")
             pushed = True
