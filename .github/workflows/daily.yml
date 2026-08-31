@@ -2,9 +2,10 @@ name: 每日资讯简报
 
 on:
   schedule:
-    # UTC 00:30 = 北京时间 08:30
+    # UTC 00:50 = 北京时间 08:50
     # GitHub Actions 的 cron 只认 UTC，且官方不保证准点，高峰期可能延迟 5-30 分钟
-    - cron: "30 0 * * *"
+    # 刻意避开整点：整点是全球任务排队高峰，提前十分钟出发，实际落点反而更贴近九点
+    - cron: "50 0 * * *"
   workflow_dispatch: # 保留手动触发，方便随时验证
 
 concurrency:
