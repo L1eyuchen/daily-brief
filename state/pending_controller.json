@@ -1,1 +1,29 @@
-[]
+[
+  {
+    "cover": "https://assetsio.gnwcdn.com/TBOD_MeetFarkas.jpg?width=690&quality=85&format=jpg&auto=webp",
+    "eta": "本周",
+    "fact": "吸血鬼RPG Blood of Dawnwalker发布首个补丁",
+    "hit_names": [
+      "竞品新品 / 降价",
+      "关注名单：witcher"
+    ],
+    "hits": [
+      "competitor",
+      "watchlist"
+    ],
+    "judged_by": "ai",
+    "key": "0cd0e5415e747f99f56305c0c1ac4762ff32014d",
+    "level": "maybe",
+    "link": "https://www.rockpapershotgun.com/blood-of-dawnwalkers-first-patch-offers-relief-from-buggy-tutorials-and-tight-lipped-npcs-but-rebel-wolves-are-still-working-on-fixes-for-the-stuttering-and-shader-crash-problems",
+    "published": "2026-09-04T10:09:17+00:00",
+    "score": 1,
+    "slot": "小黑盒+图文+补丁后手柄体验反馈",
+    "source": "rps",
+    "source_name": "Rock Paper Shotgun",
+    "summary": "Witcher-flavoured vampire RPG The Blood of Dawnwalker has received its first post-launch patch, with developers Rebel Wolves dipping their fangs into a modest neckful of problems with blocked quest progression and general controller behaviour on PC. They've al",
+    "tier": 2,
+    "title": "Blood of Dawnwalker's first patch offers relief from buggy tutorials and tight-lipped NPCs, but Rebel Wolves are still working on fixes for the stuttering and shader crash problems",
+    "track": "controller",
+    "verdict": "动作RPG是手柄场景，但补丁内容非直接相关"
+  }
+]
