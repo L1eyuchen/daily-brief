@@ -1,1 +1,56 @@
-[]
+[
+  {
+    "cover": "https://assetsio.gnwcdn.com/brencis-dawnwalker.jpg?width=690&quality=85&format=jpg&auto=webp",
+    "eta": "",
+    "fact": "",
+    "hit_names": [
+      "竞品新品 / 降价",
+      "社区高赞吐槽",
+      "关注名单：witcher"
+    ],
+    "hits": [
+      "competitor",
+      "community",
+      "watchlist"
+    ],
+    "judged_by": "rule",
+    "key": "c79c3ef4082d58f9f451947b998af1d5e613d95d",
+    "level": "",
+    "link": "https://www.eurogamer.net/the-blood-of-dawnwalker-patch-controller-issues-sequel",
+    "published": "2026-09-09T13:29:31+00:00",
+    "slot": "",
+    "source": "eurogamer",
+    "source_name": "Eurogamer",
+    "summary": "Opinion seems to be favourable about Witcher-like dark fantasy role-playing game The Blood of Dawnwalker - barring a few technical problems, that is. Quibbles with performance issues, controller issues, and bugs (and perhaps the lack of a New Game+ mode) are h",
+    "tier": 2,
+    "title": "The Blood of Dawnwalker controller issues tackled in latest hotfix, and Rebel Wolves talks more about a sequel",
+    "track": "controller",
+    "verdict": ""
+  },
+  {
+    "cover": "https://images.nintendolife.com/5a4bcc37a1914/large.jpg",
+    "eta": "",
+    "fact": "",
+    "hit_names": [
+      "竞品新品 / 降价",
+      "关注名单：zelda"
+    ],
+    "hits": [
+      "competitor",
+      "watchlist"
+    ],
+    "judged_by": "rule",
+    "key": "7c4683a73efda6bd37fb6bd8524cb194e9b9c181",
+    "level": "",
+    "link": "https://www.nintendolife.com/guides/where-to-pre-order-the-legend-of-zelda-ocarina-of-time-and-zelda-nintendo-switch-2-console",
+    "published": "2026-09-09T08:00:00+00:00",
+    "slot": "",
+    "source": "nintendolife",
+    "source_name": "Nintendo Life",
+    "summary": "Plus the new Pro Controller and amiibo. Nintendo lifted the lid on its Ocarina of Time remake in its September 2026 Direct, revealing a stunningly detailed reimagining of the N64 classic. It's scheduled to launch on 5th November , with special Zelda-themed Swi",
+    "tier": 2,
+    "title": "Guide: Where To Pre-Order The Legend Of Zelda: Ocarina Of Time & Zelda Nintendo Switch 2 Console",
+    "track": "controller",
+    "verdict": ""
+  }
+]
