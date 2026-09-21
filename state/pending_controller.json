@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "cover": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2026/09/world-of-warcraft-is-stealing-two-of-final-fantasy-14-s-best-features-1.jpeg",
+    "eta": "",
+    "fact": "",
+    "hit_names": [
+      "竞品新品 / 降价",
+      "关注名单：final fantasy"
+    ],
+    "hits": [
+      "competitor",
+      "watchlist"
+    ],
+    "judged_by": "rule",
+    "key": "bf49ef786f77356578e6f3127414f67e943f3887",
+    "level": "",
+    "link": "https://store.steampowered.com/news/group/1450625/view/692020757910258593",
+    "published": "2026-09-20T22:37:45+00:00",
+    "slot": "",
+    "source": "steamnews",
+    "source_name": "Steam 官方博客",
+    "summary": "World of Warcraft will add controller support and remove some transmogrification restrictions, both of which have already been done by its main competitor Final Fantasy 14 . However, both upcoming World of Warcraft features have some noticeable caveats for pla",
+    "tier": 2,
+    "title": "World of Warcraft Is Stealing Two of Final Fantasy 14's Best Features",
+    "track": "controller",
+    "verdict": ""
+  }
+]
