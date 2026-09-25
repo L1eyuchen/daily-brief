@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "cover": "https://cdn.mos.cms.futurecdn.net/wkKTs3kfCrzu38RbpRhEDH-1920-80.jpg",
+    "eta": "",
+    "fact": "",
+    "hit_names": [
+      "竞品新品 / 降价"
+    ],
+    "hits": [
+      "competitor"
+    ],
+    "judged_by": "rule",
+    "key": "9a90ef7307fc949dd124dbc013389cbf98f28aeb",
+    "level": "",
+    "link": "https://www.pcgamer.com/hardware/vr-hardware/metas-new-vr-headset-isnt-really-a-headset-and-doesnt-look-like-its-meant-for-gamers/",
+    "published": "2026-09-24T10:10:29+00:00",
+    "slot": "",
+    "source": "pcgamer",
+    "source_name": "PC Gamer",
+    "summary": "Lightweight glasses with a pocket-size compute puck, micro-OLED displays, Snapdragon XR2 Gen 3 chip; however, just a 70-degree FOV and no controllers included.",
+    "tier": 2,
+    "title": "Meta's new VR headset isn't really a headset and doesn't look like it's meant for gamers",
+    "track": "controller",
+    "verdict": ""
+  }
+]
