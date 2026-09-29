@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "cover": "https://cdn.mos.cms.futurecdn.net/y7VGjjQCvM83QrgVMagiqA-1920-80.jpg",
+    "eta": "",
+    "fact": "",
+    "hit_names": [
+      "竞品新品 / 降价"
+    ],
+    "hits": [
+      "competitor"
+    ],
+    "judged_by": "rule",
+    "key": "ed78558a8d9acd13bb79ebece277bc50309dc06f",
+    "level": "",
+    "link": "https://www.pcgamer.com/hardware/controllers/a-love-letter-to-the-guitar-hero-x-plorer-controller/",
+    "published": "2026-09-28T16:23:56+00:00",
+    "slot": "",
+    "source": "pcgamer",
+    "source_name": "PC Gamer",
+    "summary": "Simply the best.",
+    "tier": 2,
+    "title": "A love letter to the Guitar Hero X-Plorer Controller",
+    "track": "controller",
+    "verdict": ""
+  }
+]
