@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "cover": "https://image.gcores.com/e11b972199d751411d3287ad8dfa4c37-1280-720.jpg?x-oss-process=image/resize,limit_1,m_fill,w_626,h_292/quality,q_90",
+    "eta": "",
+    "fact": "",
+    "hit_names": [
+      "新游定档 / 发售",
+      "竞品新品 / 降价"
+    ],
+    "hits": [
+      "new_release",
+      "competitor"
+    ],
+    "judged_by": "rule",
+    "key": "ec8ac94fa5b87dafae65b1b66fde86713042f99c",
+    "level": "",
+    "link": "https://www.gcores.com/articles/220709",
+    "published": "2026-10-10T01:05:00+00:00",
+    "slot": "",
+    "source": "gcores",
+    "source_name": "机核 GCORES",
+    "summary": "微软宣布，测试代号为 Garrison 的全新Xbox PC客户端即将推出。据悉，新版本主打速度与性能提升，预计将在未来数周内面向 Xbox Insider 测试人员开放，并可能于年内正式上线。新版客户端在运行速度上改进明显。 微软表示，当加载包含1400多款游戏的个人资源库时，页面加载速度大幅提升。玩家可以更直观地区分可下载安装的游戏与需通过Xbox Cloud Gaming流式传输的游戏。在界面设计上，原有的商店页面与游戏详情页整合为了统一界面。客户端同时适配鼠标、键盘与手柄操作。 Xbox首席执行官Asha ",
+    "tier": 1,
+    "title": "更流畅：微软宣布全新Xbox PC客户端",
+    "track": "controller",
+    "verdict": ""
+  }
+]
