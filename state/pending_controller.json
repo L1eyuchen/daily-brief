@@ -24,5 +24,29 @@
     "title": "更流畅：微软宣布全新Xbox PC客户端",
     "track": "controller",
     "verdict": ""
+  },
+  {
+    "cover": "https://cdn.mos.cms.futurecdn.net/mPYS75Pqb5cN2e3gGR3eY-1920-80.jpg",
+    "eta": "",
+    "fact": "",
+    "hit_names": [
+      "竞品新品 / 降价"
+    ],
+    "hits": [
+      "competitor"
+    ],
+    "judged_by": "rule",
+    "key": "1107e29d2f0d1d853fafd1fd374b984c7b154d8f",
+    "level": "",
+    "link": "https://www.pcgamer.com/hardware/vr-hardware/i-am-the-controller-now-mit-engineers-have-created-a-second-skin-that-could-one-day-track-whole-bodies-in-vr/",
+    "published": "2026-10-12T15:34:40+00:00",
+    "slot": "",
+    "source": "pcgamer",
+    "source_name": "PC Gamer",
+    "summary": "Riding the wave(guide).",
+    "tier": 2,
+    "title": "I am the controller now: MIT engineers have created a 'second skin' that could one day track whole bodies in VR",
+    "track": "controller",
+    "verdict": ""
   }
 ]
