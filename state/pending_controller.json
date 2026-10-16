@@ -1,1 +1,52 @@
-[]
+[
+  {
+    "cover": "https://image.gcores.com/09022fab4063ef0ceb1b3b82447d2b4d-1088-612.webp?x-oss-process=image/resize,limit_1,m_fill,w_626,h_292/quality,q_90",
+    "eta": "",
+    "fact": "",
+    "hit_names": [
+      "新游定档 / 发售",
+      "竞品新品 / 降价"
+    ],
+    "hits": [
+      "new_release",
+      "competitor"
+    ],
+    "judged_by": "rule",
+    "key": "ea592dae15965d0d63acdfa819b46d15eb38bfbd",
+    "level": "",
+    "link": "https://www.gcores.com/articles/220971",
+    "published": "2026-10-16T00:55:00+00:00",
+    "slot": "",
+    "source": "gcores",
+    "source_name": "机核 GCORES",
+    "summary": "索尼互动娱乐为赛车游戏《跑车浪漫旅7》推出Spec IV第一部分免费更新，加入六款新车和 Sportsland SUGO 赛道，同时公布一款纪念《跑车浪漫旅》系列诞生30周年的 DualSense 无线控制器限定版。 据悉，Spec IV第一部分包含六款新车、Sportsland SUGO赛道、新活动、新的Scapes场景地点以及多项玩法功能。更新还加入了“车辆查看器”功能和“体验”模式，并新增6场世界赛道活动。SIE表示，追求单圈成绩、了解汽车历史、拍摄照片、收藏车辆和驾驶新车的玩家，都能在本次更新中找到新的玩法",
+    "tier": 1,
+    "title": "《跑车浪漫旅7》系列30周年限定版手柄公布，Spec IV第一部分更新上线",
+    "track": "controller",
+    "verdict": ""
+  },
+  {
+    "cover": "https://cdn.mos.cms.futurecdn.net/MS5LSq9EcZLQBQa6Kw8VLY-1920-80.jpg",
+    "eta": "",
+    "fact": "",
+    "hit_names": [
+      "竞品新品 / 降价"
+    ],
+    "hits": [
+      "competitor"
+    ],
+    "judged_by": "rule",
+    "key": "2a75e2776ec5ee0f5373bcb9e752ce01ce035d81",
+    "level": "",
+    "link": "https://www.pcgamer.com/hardware/controllers/razer-wolverine-v4-pro-review/",
+    "published": "2026-10-15T13:43:35+00:00",
+    "slot": "",
+    "source": "pcgamer",
+    "source_name": "PC Gamer",
+    "summary": "Claws, sharpened.",
+    "tier": 2,
+    "title": "Razer Wolverine V4 Pro wireless gaming controller review",
+    "track": "controller",
+    "verdict": ""
+  }
+]
