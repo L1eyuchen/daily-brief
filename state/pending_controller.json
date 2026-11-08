@@ -1,1 +1,27 @@
-[]
+[
+  {
+    "cover": "https://assetsio.gnwcdn.com/XBOX-Wire-DtC-Phone-Controller-110426-5428ff0def107f49971d.jpg?width=690&quality=85&format=jpg&auto=webp",
+    "eta": "本周",
+    "fact": "Xbox测试手机当手柄玩智能电视云游戏",
+    "hit_names": [
+      "竞品新品 / 降价"
+    ],
+    "hits": [
+      "competitor"
+    ],
+    "judged_by": "ai",
+    "key": "3a4a2514e9ddc56a073c0e87d507d3872ed8d412",
+    "level": "high",
+    "link": "https://www.eurogamer.net/xbox-cloud-gaming-phone-controller-smart-tv-nano-cloud-connect",
+    "published": "2026-11-07T12:30:10+00:00",
+    "score": 2,
+    "slot": "抖音+B站+云游戏无手柄玩法对比",
+    "source": "eurogamer",
+    "source_name": "Eurogamer",
+    "summary": "Xbox is testing two new ways to play its cloud games, and one of them doesn't require a controller at all. Read more",
+    "tier": 2,
+    "title": "Xbox is testing a way to use your phone as a controller on smart TVs",
+    "track": "controller",
+    "verdict": "直接冲击手柄使用场景，需回应兼容话题"
+  }
+]
