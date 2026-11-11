@@ -23,5 +23,33 @@
     "title": "Xbox is testing a way to use your phone as a controller on smart TVs",
     "track": "controller",
     "verdict": "直接冲击手柄使用场景，需回应兼容话题"
+  },
+  {
+    "cover": "https://image.gcores.com/57f8dbd40eb3dcc4dd73fb0f16c4620e-1280-720.jpg?x-oss-process=image/resize,limit_1,m_fill,w_626,h_292/quality,q_90",
+    "eta": "",
+    "fact": "",
+    "hit_names": [
+      "竞品新品 / 降价",
+      "现象级可蹭热点",
+      "关注名单：gta"
+    ],
+    "hits": [
+      "competitor",
+      "trending",
+      "watchlist"
+    ],
+    "judged_by": "rule",
+    "key": "f72124a915552049ee8b24aec89487e2a3cd2628",
+    "level": "",
+    "link": "https://www.gcores.com/articles/222174",
+    "published": "2026-11-10T14:05:40+00:00",
+    "slot": "",
+    "source": "gcores",
+    "source_name": "机核 GCORES",
+    "summary": "R星于今日公布了《GTA6》的最新预告，背景音乐为 Tove Lo 演唱的《Blood in Your Eyes》。工作室同步确认，游戏在所有主机平台均以30帧/秒为目标帧率。据悉，这一取舍能最大限度发挥硬件性能，同时保证场景与人群的视觉密度。 R星表示，开发团队针对当前世代主机对《GTA6》进行了全面优化和重构。 在 PS5 Pro 上，游戏借助 PSSR 技术提升画面清晰度，并支持该机型专属的光线追踪阴影效果。基础 PS5 版本则支持 DualSense 手柄的触觉反馈与 Tempest 3D 音效，并借助超高",
+    "tier": 1,
+    "title": "《GTA6》主机版确认均为30帧",
+    "track": "controller",
+    "verdict": ""
   }
 ]
