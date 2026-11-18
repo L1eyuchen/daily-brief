@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "cover": "https://cdn.mos.cms.futurecdn.net/8WGv9Ya9efi6zrCWFJxEy7-1920-80.jpg",
+    "eta": "",
+    "fact": "",
+    "hit_names": [
+      "竞品新品 / 降价"
+    ],
+    "hits": [
+      "competitor"
+    ],
+    "judged_by": "rule",
+    "key": "96d7cc3859612f44a82280438aee2bbd797be23d",
+    "level": "",
+    "link": "https://www.pcgamer.com/hardware/vr-hardware/modder-beats-valve-to-the-punch-adding-steam-controller-tracking-for-the-steam-frame/",
+    "published": "2026-11-17T11:30:45+00:00",
+    "slot": "",
+    "source": "pcgamer",
+    "source_name": "PC Gamer",
+    "summary": "\"I'll try to maintain this at least until Valve releases official tracking support for the Steam Controller.\"",
+    "tier": 2,
+    "title": "Modder beats Valve to the punch adding Steam Controller tracking for the Steam Frame",
+    "track": "controller",
+    "verdict": ""
+  },
+  {
+    "cover": "https://images.rpgsite.net/articles/thumbnail/a3ecf1c/21781/original/pillars-of-eternity-controller-support-pc-update-now-live-deadfire.png",
+    "eta": "",
+    "fact": "",
+    "hit_names": [
+      "竞品新品 / 降价"
+    ],
+    "hits": [
+      "competitor"
+    ],
+    "judged_by": "rule",
+    "key": "e93261b5ec3785e9701bbc043be1832a5049d2a8",
+    "level": "",
+    "link": "https://store.steampowered.com/news/group/6070552/view/679641571029680212",
+    "published": "2026-11-18T03:23:16+00:00",
+    "slot": "",
+    "source": "steamnews",
+    "source_name": "Steam 官方博客",
+    "summary": "Deadfire also brings in a rework to its turn-based mode today.",
+    "tier": 2,
+    "title": "Pillars of Eternity and Pillars of Eternity II Deadfire get controller support on PC with today's updates",
+    "track": "controller",
+    "verdict": ""
+  }
+]
