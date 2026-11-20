@@ -1,1 +1,30 @@
-[]
+[
+  {
+    "cover": "https://cdn.mos.cms.futurecdn.net/hWFrwoietRNPc2r3uRnoyX-1920-80.jpg",
+    "eta": "",
+    "fact": "",
+    "hit_names": [
+      "竞品新品 / 降价",
+      "现象级可蹭热点",
+      "关注名单：gta"
+    ],
+    "hits": [
+      "competitor",
+      "trending",
+      "watchlist"
+    ],
+    "judged_by": "rule",
+    "key": "069f4833f0d2852d63d2358e30a76fce7c7a1fa9",
+    "level": "",
+    "link": "https://www.pcgamer.com/games/grand-theft-auto/gta-6-has-the-best-use-of-the-ps5-controller-ive-ever-seen/",
+    "published": "2026-11-19T22:28:33+00:00",
+    "slot": "",
+    "source": "pcgamer",
+    "source_name": "PC Gamer",
+    "summary": "The PS5 triggers are changing how I drive in GTA.",
+    "tier": 2,
+    "title": "GTA 6 has the best use of the PS5 controller I've ever seen",
+    "track": "controller",
+    "verdict": ""
+  }
+]
