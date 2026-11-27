@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "cover": "https://images.nintendolife.com/637448a224e55/large.jpg",
+    "eta": "",
+    "fact": "",
+    "hit_names": [
+      "竞品新品 / 降价"
+    ],
+    "hits": [
+      "competitor"
+    ],
+    "judged_by": "rule",
+    "key": "47b99cacebc74fca811df4db60fbe0a2c2960437",
+    "level": "",
+    "link": "https://www.nintendolife.com/reviews/gamesir-nova-vision-controller-for-switch-1-and-2-unique-features-elevate-this-mid-range-pad",
+    "published": "2026-11-26T18:00:00+00:00",
+    "slot": "",
+    "source": "nintendolife",
+    "source_name": "Nintendo Life",
+    "summary": "What a vision. Accessory developer Gamesir doesn’t often make controllers with the Switch 1 and 2 in mind, instead focusing primarily on Xbox and PC. So when it announced the new Nova Vision , my Spider-Sense tingled. The latest entry in the mid-range Nova lin",
+    "tier": 2,
+    "title": "Review: Gamesir Nova Vision Controller For Switch 1 & 2 - Unique Features Elevate This Mid-Range Pad",
+    "track": "controller",
+    "verdict": ""
+  },
+  {
+    "cover": "https://cdn.mos.cms.futurecdn.net/HnGQPuJEk2xU29aLtyyTSG-1920-80.jpg",
+    "eta": "",
+    "fact": "",
+    "hit_names": [
+      "竞品新品 / 降价"
+    ],
+    "hits": [
+      "competitor"
+    ],
+    "judged_by": "rule",
+    "key": "bf2bc17e64daf66b14a44d9d9a0ed5d6ae8caf5c",
+    "level": "",
+    "link": "https://www.pcgamer.com/hardware/game-pads/these-budget-friendly-pads-are-the-cheapest-quickest-way-to-instantly-upgrade-your-setup-for-under-usd25/",
+    "published": "2026-11-26T14:20:36+00:00",
+    "slot": "",
+    "source": "pcgamer",
+    "source_name": "PC Gamer",
+    "summary": "Be a master controller on the cheap.",
+    "tier": 2,
+    "title": "These budget-friendly pads are the cheapest, quickest way to instantly upgrade your setup for under $25",
+    "track": "controller",
+    "verdict": ""
+  }
+]
